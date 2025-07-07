@@ -18,8 +18,8 @@ Florabit is a virtual garden app where you can monitor plants through ESP32 and 
 
 ### 1. Clone the Repo
 
-git clone https://github.com/Yuuugoo/florabit.git
-cd florabit-app
+- git clone https://github.com/Yuuugoo/florabit.git
+- cd florabit-app
 
 ### 2. Setup Prisma Client
 
@@ -28,9 +28,9 @@ npx prisma generate
 
 ### 3. Build Docker Container
 
-cd florabit-app
-docker-compose up --build
-docker compose exec backend npx prisma migrate dev --name init (Run Prisma Migration inside backend container)
+- cd florabit-app
+- docker-compose up --build
+- docker compose exec backend npx prisma migrate dev --name init (Run Prisma Migration inside backend container)
 
 ## ✅ Todo / Roadmap
 
