@@ -18,7 +18,7 @@ Florabit is a virtual garden app where you can monitor plants through ESP32 and 
 
 ### 1. Clone the Repo
 
-git clone https://github.com/YOUR_USERNAME/florabit.git
+git clone https://github.com/Yuuugoo/florabit.git
 cd florabit-app
 
 ### 2. Setup Prisma Client
