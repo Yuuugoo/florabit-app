@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Navbar() {
   return (
     <div className="navbar bg-neutral text-neutral-content border-b-4 border-black shadow-none font-mono px-4">
@@ -18,9 +20,9 @@ export default function Navbar() {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white text-black border border-black rounded-none w-40"
           >
-            <li><a className="hover:bg-gray-200">Home</a></li>
-            <li><a className="hover:bg-gray-200">Garden</a></li>
-            <li><a className="hover:bg-gray-200">About</a></li>
+            <li><Link to="/" className="hover:bg-gray-200">Home</Link></li>
+            <li><Link to="/garden" className="hover:bg-gray-200">Garden</Link></li>
+            <li><Link to="/about" className="hover:bg-gray-200">About</Link></li>
           </ul>
         </div>
       </div>

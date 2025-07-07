@@ -1,6 +1,17 @@
 FROM node:24-alpine
+
+# Set working directory
 WORKDIR /app
-COPY . .
+
+COPY package*.json ./
+
+# Install deps first
 RUN npm install
+
+COPY . .
+
+# Expose port
 EXPOSE 5000
-CMD ["node", "index.js"]
+
+# Start the server
+CMD ["node", "server.js"]

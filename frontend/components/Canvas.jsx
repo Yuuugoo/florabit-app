@@ -2,10 +2,8 @@ import { useState } from 'react';
 import PlantCard from './PlantCard';
 
 export default function GardenCanvas() {
-  const [plants, setPlants] = useState([
-    { name: 'Rose', mood: 'seed' },
-    { name: 'Tulip', mood: 'seed' },
-  ]);
+
+  const [plants, setPlants] = useState([]);
 
   const [form, setForm] = useState({ name: '', mood: 'happy' });
 
@@ -21,10 +19,24 @@ export default function GardenCanvas() {
 
   return (
     <div className="p-4">
+      {/* Canvas Background */}
+       <div
+          className="grid grid-cols-3 gap-4 p-4"
+          style={{
+              backgroundImage: "url('/grass-tile.png')",
+              border: "2px solid black",
+              padding: "1rem",
+          }}
+          >
+          {plants.map((plant, i) => (
+              <PlantCard key={i} {...plant} onRemove={() => removePlant(i)} />
+          ))}
+      </div>
+
       {/* Form */}
       <div className="bg-white border-2 border-black p-3 mb-4 w-full max-w-sm rounded-none font-pixel">
         <h2 className="text-sm mb-2">➕ Add New Plant</h2>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2"> 
           <input
             type="text"
             placeholder="Plant name"
@@ -50,23 +62,6 @@ export default function GardenCanvas() {
           </button>
         </div>
       </div>
-
-      {/* Grid */}
-        <div
-            className="grid grid-cols-3 gap-4 p-4"
-            style={{
-                backgroundImage: "url('/grass-tile.png')",
-                backgroundSize: "32px 32px",
-                backgroundRepeat: "repeat",
-                border: "2px solid black",
-                padding: "1rem",
-            }}
-            >
-            {plants.map((plant, i) => (
-                <PlantCard key={i} {...plant} onRemove={() => removePlant(i)} />
-            ))}
-        </div>
-
     </div>
   );
 }

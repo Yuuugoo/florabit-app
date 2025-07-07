@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 
 export default function PlantCard({ name, mood, onRemove }) {
-  // Mood stages (we can expand this later)
   const growthStages = {
     seed: null,
     sprout: '🌱',
@@ -27,7 +26,7 @@ export default function PlantCard({ name, mood, onRemove }) {
         </div>
       )}
 
-      <img src="/flower-pot-red.png" alt="pot" className="w-12 h-12 z-10" />
+      {/* <img src="/flower-pot-red.png" alt="pot" className="w-12 h-12 z-10" /> */}
 
       {/* Name below */}
       <div className="mt-1 text-center break-words">{name}</div>
